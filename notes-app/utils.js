@@ -1,5 +1,5 @@
-console.log("utils.js")
+const add = function(a, b) {
+  return a + b
+}
 
-const name = "Rebecca"
-
-module.exports = name
+module.exports = add
