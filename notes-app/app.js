@@ -6,4 +6,4 @@ const notes = getNotes()
 
 console.log(notes)
 
-console.log(chalk.green("Success!"))
+console.log(chalk.blue("Logging"))
