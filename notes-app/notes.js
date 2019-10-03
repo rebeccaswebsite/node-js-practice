@@ -23,6 +23,16 @@ const addNote = function(title, body) {
   }
 }
 
+const removeNote = function(title) {
+  const notes = loadNotes()
+  const filteredNotes = notes.filter(function(note) {
+    return note.title !== title
+  })
+
+  savedNotes(filteredNotes)
+  console.log("Deleted note.")
+}
+
 const savedNotes = function(notes) {
   const dataJSON = JSON.stringify(notes)
   fs.writeFileSync("notes.json", dataJSON)
@@ -40,5 +50,6 @@ const loadNotes = function() {
 
 module.exports = {
   getNotes: getNotes,
-  addNote: addNote
+  addNote: addNote,
+  removeNote: removeNote
 }
